@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
 
+
   <body>
     <div class="page">
       <div class="popup">
@@ -124,16 +125,15 @@
 
       <main class="main">
         <div class="main__profile">
+
           <div class="main__content-image">
             <img
               src="./images/Jacques.png"
               alt="profile-image"
               class="main__profile-image"
             />
-            <button type="button" class="main__button main__button_img">
-              &#x1F58C;
-            </button>
-          </div>
+           </div> 
+
           <div class="main__content-paragraph">
             <p class="main__paragraph main__paragraph_name">Jacques Custeau</p>
             <p class="main__paragraph main__paragraph_job">explorador</p>
@@ -148,12 +148,38 @@
         </div>
 
         <div class="main__gallery"></div>
+      </main>
 
-        <article class="main__gallery-card">
+      <template id="main__template">
+        <div class="main__gallery-card">
+          <img class="main__gallery-image" />
+          <button
+            type="button"
+            class="main__button main__button_trash"
+          ></button>
+          <div class="main__gallery-content">
+            <p class="main__gallery-paragraph"></p>
+            <button
+              type="button"
+              class="main__button main__button_like"
+            ></button>
+          </div>
+        </div>
+      </template>
+
+      <footer class="footer">
+        <p class="footer__copyright">&#x00a9; 2025 Around The USA</p>
+      </footer>
+    </div>
+    <script type="module" src="./scripts/index.js"></script>
+  </body>
+</html>
+
+       <!--- <article class="main__gallery-card">
           <img
             src="./images/paisaje1.jpg"
             alt="Valle de Yosemite"
-           
+            class="card__image"
           />
           <div class="card__wrap">
             <h2 class="card__title">Valle de Yosemite</h2>
@@ -263,30 +289,4 @@
               </button>
             </div>
           </div>
-        </article>
-      </main>
-
-      <template id="main__template">
-        <div class="main__gallery-card">
-          <img class="main__gallery-image" />
-          <button
-            type="button"
-            class="main__button main__button_trash"
-          ></button>
-          <div class="main__gallery-content">
-            <p class="main__gallery-paragraph"></p>
-            <button
-              type="button"
-              class="main__button main__button_like"
-            ></button>
-          </div>
-        </div>
-      </template>
-
-      <footer class="footer">
-        <p class="footer__copyright">&#x00a9; 2025 Around The USA</p>
-      </footer>
-    </div>
-    <script type="module" src="./scripts/index.js"></script>
-  </body>
-</html>
+        </article>-->
