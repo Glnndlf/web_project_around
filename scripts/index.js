@@ -1,58 +1,151 @@
-// INICIAR EL POPUP Y CERRARLO
-const OpenPoput = document.querySelector("#Open-Poput");
-const ClosePoput = document.querySelector("#Close-Popup");
-const Popup = document.querySelector("#editProfilePopup");
+// Agregando las Clases a utilizar
+const popUp = document.querySelector(".popup");
+const nameDefault = document.querySelector(".main__paragraph_name");
+const occupationDefault = document.querySelector(".main__paragraph_occupation");
+const popFormEdit = document.querySelector(".popup__form-edit");
+const popFormAdd = document.querySelector(".popup__form-add");
+const popImages = document.querySelector(".popup__images");
+const popHidden = document.querySelector(".popup__hidden");
+const galleryContainer = document.querySelector(".gallery");
 
-OpenPoput.addEventListener("click", () => {
-  Popup.showModal();
+// Agregando los Botones a utilizar
+const btnEdit = document.querySelector(".main__button_edit");
+const btnCloseWindow = popUp.querySelector(".popup__button_close");
+const btnEditSave = popUp.querySelector(".popup__button_save");
+const btnAdd = document.querySelector(".main__button_add");
+const btnAddSave = document.querySelector(".popup__button_add");
+const btnLike = document.querySelectorAll(".gallery__button_like");
+const btnDelete = document.querySelector(".gallery__button_delete");
+const btnCard = document.querySelector(".gallery__img");
+
+// Agregando los Inputs
+const inName = document.querySelector(".popup__input_name");
+const inOccupation = document.querySelector(".popup__input_occupation");
+const inTitle = document.querySelector(".popup__input_title");
+const inURL = document.querySelector(".popup__input_url");
+
+//Las 6 Tarjetas Iniciales
+const initialCards = [
+  {
+    name: "Central Park, NYC",
+    link: "./images/img1-central-park.png",
+  },
+  {
+    name: "Bear Mountain, NY",
+    link: "./images/img1-bear-mountain.png",
+  },
+  {
+    name: "Liberty State Park, New Jersey",
+    link: "./images/img2-hoboken.png",
+  },
+  {
+    name: "Manhattan, NY",
+    link: "./images/img3-manhathan.png",
+  },
+  {
+    name: "Times Square, NY",
+    link: "./images/img4-timesquare.png",
+  },
+  {
+    name: "Vessel, NY",
+    link: "./images/img5-vessel.png",
+  },
+];
+
+initialCards.forEach((card) => {
+  createCard(card.name, card.link);
 });
 
-ClosePoput.addEventListener("click", () => {
-  Popup.close();
-});
+// Funcion para Crear Tarjeta
+function createCard(title, link) {
+  // Clonar template
+  const cardTemplate = document.querySelector("#card__template").content;
+  const galleryCard = cardTemplate
+    .querySelector(".card__container")
+    .cloneNode(true);
 
-// 1. Busquemos el formulario en el DOM. Seleccion de formulario
-// querySelector():Metodo que busca el primer elemento que coincida con el selector CSS proporcionado*/
-//
-// 2: Lo siguiente es el manipulador (handler) de entrega de formularios, aunque no se enviará en
-//   ningún sitio todavía. Observa que el nombre de la función comienza con un verbo y describe exactamente
-//   lo que hace la función
+  const galleryImg = galleryCard.querySelector(".card__img");
 
-//   Esta línea impide que el navegador entregue el formulario en su forma predeterminada.
-//   Una vez hecho esto, podemos definir nuestra propia forma de entregar el formulario.
-//   Lo explicaremos todo con más detalle después.
+  galleryImg.src = link;
+  galleryImg.alt = title;
 
-// 3: Busquemos los campos del formulario en el DOM
-// 4: Obtén los valores de cada campo desde la propiedad de valor correspondiente
-// 5: Selecciona los elementos donde se introducirán los valores de los campos
-// 6: Inserta nuevos valores utilizando el textContent. Propiedad del metodo querySelector()
-// 7: Conecta el manipulador (handler) al formulario. Se observará el evento de entrega
+  const galleryBtnDelete = galleryCard.querySelector(".card__button_delete");
 
-// Guardar valores del POPUP
-//1
-let formElement = document.querySelector(".popup__form");
-//2.
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
+  const galleryContent = galleryCard.querySelector(".card__content");
+  galleryContent.querySelector(".card__title").textContent = title;
 
-  //3.
-  let nameInput = document.getElementById("popup-name"); // Utiliza el método querySelector()
-  let occupationInput = document.getElementById("popup-about"); // Utiliza el método querySelector()
-  //4.
-  const newName = nameInput.value;
-  const NewOccupation = occupationInput.value;
+  const galleryBtnLike = galleryCard.querySelector(".card__button_like");
 
-  //5.
-  const profileName = document.querySelector(".profile__name");
-  const profileOccupation = document.querySelector(".profile__occupation");
+  // clono a galleryCard en la seccion de gallery (HTML)
+  galleryContainer.prepend(galleryCard);
 
-  //6.
-  profileName.textContent = newName;
-  profileOccupation.textContent = NewOccupation;
+  // Boton Eliminar
+  galleryBtnDelete.addEventListener("click", function () {
+    galleryCard.remove();
+  });
 
-  const popup = document.getElementById("editProfilePopup");
-  popup.close();
+  // Boton Me gusta
+  galleryBtnLike.addEventListener("click", function () {
+    galleryBtnLike.classList.toggle("card__button_like_active");
+  });
+
+  const popImage = document.querySelector(".popup__image");
+  const popText = document.querySelector(".popup__text");
+
+  // Boton Imagen: Abrir Ventana Imagen
+  galleryImg.addEventListener("click", function () {
+    console.log("Abriendo la ventana de la imagen");
+    popUp.classList.add("popup__opened"); // Agrego la clase al popup para que sea visible
+    popFormAdd.classList.add("popup__hidden"); // Agrego la clase al popup__hidden para que sea no visible
+    popFormEdit.classList.add("popup__hidden"); // Agrego la clase al popup__hidden para que sea no visible
+
+    popImage.setAttribute("src", link);
+    popText.textContent = title;
+  });
 }
 
-// 7.
-formElement.addEventListener("submit", handleProfileFormSubmit);
+// Funcion Cerrar ventana: Popup
+function closeWindow() {
+  popUp.classList.remove("popup__opened"); // Elimino la clase al popup para que NO sea visible
+  popFormAdd.classList.remove("popup__hidden"); // Elimino la clase para que sea visible
+  popFormEdit.classList.remove("popup__hidden"); // Elimino la clase para que sea visible
+  popImages.classList.remove("popup__hidden"); // Elimino la clase para que sea visible
+}
+
+// Funcion Abrir ventana: Agregar Tarjeta
+function addWindow() {
+  popUp.classList.add("popup__opened"); // Agrego la clase al popup para que sea visible
+  popFormEdit.classList.add("popup__hidden"); // Agrego la clase al popup__form-edit para que sea no visible
+  popImages.classList.add("popup__hidden"); // Agrego la clase al popup__images para que sea no visible
+}
+
+// Funcion Abrir ventana: Editar
+function editWindow() {
+  popUp.classList.add("popup__opened"); // Agrego la clase al popup para que sea visible
+  popFormAdd.classList.add("popup__hidden"); // Agrego la clase al popup__hidden para que sea no visible
+  popImages.classList.add("popup__hidden"); // Agrego la clase al popup__hidden para que sea no visible
+  inName.value = nameDefault.textContent.trim(); // Me aparezca el nombre del perfil a modificar
+  inOccupation.value = occupationDefault.textContent.trim(); // Me aparezca la ocupacion del perfil a modificar
+}
+
+function saveInfo() {
+  nameDefault.textContent = inName.value; //Cambio el nombre actual por el valor que hay el input
+  occupationDefault.textContent = inOccupation.value; //Cambio la ocupacion actual por el valor que hay el input
+  closeWindow();
+}
+
+function addCard() {
+  createCard(inTitle.value, inURL.value);
+  console.log(createCard);
+
+  inTitle.value = "";
+  inURL.value = "";
+  closeWindow();
+}
+
+// Eventos
+btnCloseWindow.addEventListener("click", closeWindow);
+btnEdit.addEventListener("click", editWindow);
+btnEditSave.addEventListener("click", saveInfo);
+btnAdd.addEventListener("click", addWindow);
+btnAddSave.addEventListener("click", addCard);
