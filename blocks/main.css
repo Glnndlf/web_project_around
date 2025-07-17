@@ -112,7 +112,7 @@
   margin: 0;
 }
 
-.main__gallery-paragraph_text_overflow {
+.main__gallery-text_text_overflow {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
