@@ -3,208 +3,178 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Johan Echeverry" />
-    <meta name="description" content="Alrededor de los EE.UU." />
+    <meta name="description" content="Galeria de arte TripleTen" />
+    <meta name="author" content="Axel Cisneros" />
     <meta name="keywords" content="html, css, javascript" />
     <title>Around the USA</title>
-    <link
-      rel="shortcut icon"
-      href="/images/favicon.ico"
-      type="image/favicon.ico"
-    />
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
 
   <body>
     <div class="page">
       <header class="header">
-        <img
-          class="header__image"
-          src="./images/header-vector.svg"
-          alt="Header image"
-        />
+        <img src="./images/Vector.svg" alt="logo-page" class="header__image" />
       </header>
 
-      <main class="content">
-        <section class="main">
-          <img
-            class="main__img-profile"
-            src="./images/JacquesC.jpg"
-            alt="profile image"
-          />
-
-          <div class="main__content-paragraph">
-            <h1 class="main__paragraph main__paragraph_name">
-              Jacques Custeau
-            </h1>
-            <button class="main__button main__button_edit">
-              <img
-                class="main__button-img"
-                src="./images/edit-button.svg"
-                alt="Cargar la imagen del boton editar"
-              />
-            </button>
-            <h2 class="main__paragraph main__paragraph_occupation">
-              Explorador
-            </h2>
+      <main class="main">
+        <div class="main__profile">
+          <div class="main__portrait">
+            <img
+              src="./images/JacquesC.jpg"
+              alt="profile-image"
+              class="main__portrait-image"
+            />
           </div>
-
-          <button class="main__button_add">+</button>
-        </section>
-
-        <section class="gallery">
-          <!-- -->
-          <article class="main__gallery-card">
+          <div class="main__content-text">
+            <p class="main__text main__text_name">Jacques Custeau</p>
+            <p class="main__text main__text_about">Explorer</p>
+            <button type="button" class="main__button main__button_edit">
+              &#x1F58C;
+            </button>
+          </div>
+          <button type="button" class="main__button main__button_add">
+            &#x1F7A3;
+          </button>
+        </div>
+        <div class="main__gallery">
+          <div class="main__gallery-card">
             <img
-              src="./images/paisaje1.jpg"
-              alt="Valle de Yosemite"
-              class="card__image"
+              src="./images/valle-yosemite.jpg"
+              alt="valle-yosemite"
+              class="main__gallery-image"
             />
-            <div class="card__wrap">
-              <h2 class="card__title">Valle de Yosemite</h2>
-              <div class="card__actions">
-                <button class="card__link">
-                  <img
-                    src="./images/Vector2_corazon.svg"
-                    alt="Imagen de corazón"
-                    class="card__link-logo"
-                  />
-                </button>
-              </div>
+            <div class="main__gallery-content">
+              <p class="main__gallery-text">Valle de Yosemite</p>
+              <button type="button" class="main__button main__button_like">
+                <img
+                  src="./images/Vector-like.svg"
+                  alt="like"
+                  class="main__gallery-like"
+                />
+              </button>
             </div>
-          </article>
-
-          <article class=".main__gallery-card">
+          </div>
+          <div class="main__gallery-card">
             <img
-              src="./images/paisaje2.png"
-              alt="Lago Louise"
-              class="card__image"
+              src="./images/lago-louise.png"
+              alt="lago-louise"
+              class="main__gallery-image"
             />
-            <div class="card__wrap">
-              <h2 class="card__title">Lago Louise</h2>
-              <div class="card__actions">
-                <button class="card__link">
-                  <img
-                    src="./images/Vector2_corazon.svg"
-                    alt="Imagen de corazón"
-                    class="card__link-logo"
-                  />
-                </button>
-              </div>
+            <div class="main__gallery-content">
+              <p class="main__gallery-text">Lago Louise</p>
+              <button type="button" class="main__button main__button_like">
+                <img
+                  src="./images/Vector-like.svg"
+                  alt="like"
+                  class="main__gallery-like"
+                />
+              </button>
             </div>
-          </article>
-
-          <article class=".main__gallery-card">
+          </div>
+          <div class="main__gallery-card">
             <img
-              src="./images/paisaje3.png"
-              alt="Montañas Calvas"
-              class="card__image"
+              src="./images/montañas-calvas.png"
+              alt="montañas-calvas"
+              class="main__gallery-image"
             />
-            <div class="card__wrap">
-              <h2 class="card__title">Montañas Calvas</h2>
-              <div class="card__actions">
-                <button class="card__link">
-                  <img
-                    src="./images/Vector2_corazon.svg"
-                    alt="Imagen de corazón"
-                    class="card__link-logo"
-                  />
-                </button>
-              </div>
+            <div class="main__gallery-content">
+              <p class="main__gallery-text">Montañas Calvas</p>
+              <button type="button" class="main__button main__button_like">
+                <img
+                  src="./images/Vector-like.svg"
+                  alt="like"
+                  class="main__gallery-like"
+                />
+              </button>
             </div>
-          </article>
-
-          <article class=".main__gallery-card">
+          </div>
+          <div class="main__gallery-card">
             <img
-              src="./images/paisaje4.png"
-              alt="Latemar"
-              class="card__image"
+              src="./images/latemar.png"
+              alt="latemar"
+              class="main__gallery-image"
             />
-            <div class="card__wrap">
-              <h2 class="card__title">Latemar</h2>
-              <div class="card__actions">
-                <button class="card__link">
-                  <img
-                    src="./images/Vector2_corazon.svg"
-                    alt="Imagen de corazón"
-                    class="card__link-logo"
-                  />
-                </button>
-              </div>
+            <div class="main__gallery-content">
+              <p class="main__gallery-text">Latemar</p>
+              <button type="button" class="main__button main__button_like">
+                <img
+                  src="./images/Vector-like.svg"
+                  alt="like"
+                  class="main__gallery-like"
+                />
+              </button>
             </div>
-          </article>
-
-          <article class=".main__gallery-card">
+          </div>
+          <div class="main__gallery-card">
             <img
-              src="./images/paisaje5.png"
-              alt="Parque Nacional de la Vanoise"
-              class="card__image"
+              src="./images/vanois-national-park.png"
+              alt="vanois-national-park"
+              class="main__gallery-image"
             />
-            <div class="card__wrap">
-              <h2 class="card__title">Parque Nacional de la Vanoise</h2>
-              <div class="card__actions">
-                <button class="card__link">
-                  <img
-                    src="./images/Vector2_corazon.svg"
-                    alt="Imagen de corazón"
-                    class="card__link-logo"
-                  />
-                </button>
-              </div>
+            <div class="main__gallery-content">
+              <p
+                class="main__gallery-text main__gallery-paragraph_text_overflow"
+              >
+                Vanois National Park
+              </p>
+              <button type="button" class="main__button main__button_like">
+                <img
+                  src="./images/Vector-like.svg"
+                  alt="like"
+                  class="main__gallery-like"
+                />
+              </button>
             </div>
-          </article>
-
-          <article class=".main__gallery-card">
+          </div>
+          <div class="main__gallery-card">
             <img
-              src="./images/paisaje6.png"
-              alt="Lago di Braies"
-              class="card__image"
+              src="./images/lago-braies.png"
+              alt="lago-braies"
+              class="main__gallery-image"
             />
-            <div class="card__wrap">
-              <h2 class="card__title">Lago di Braies</h2>
-              <div class="card__actions">
-                <button class="card__link">
-                  <img
-                    src="./images/Vector2_corazon.svg"
-                    alt="Imagen de corazón"
-                    class="card__link-logo"
-                  />
-                </button>
-              </div>
+            <div class="main__gallery-content">
+              <p class="main__gallery-text">Lago di Braies</p>
+              <button type="button" class="main__button main__button_like">
+                <img
+                  src="./images/Vector-like.svg"
+                  alt="like"
+                  class="main__gallery-like"
+                />
+              </button>
             </div>
-          </article>
-          <!-- -->
-        </section>
+          </div>
+        </div>
+
+        <div class="popup">
+          <button type="button" class="popup__button popup__button_close">
+            &#x1F7A9;
+          </button>
+          <form action="" class="popup__container">
+            <h2 class="popup__subtitle">Edit profile</h2>
+            <fieldset class="popup__content">
+              <input
+                type="text"
+                class="popup__input popup__input_name"
+                placeholder="Nombre"
+              />
+              <input
+                type="text"
+                class="popup__input popup__input_about"
+                placeholder="Acerca de mi"
+              />
+            </fieldset>
+            <fieldset class="popup__content">
+              <button type="submit" class="popup__button popup__button_save">
+                Save
+              </button>
+            </fieldset>
+          </form>
+        </div>
       </main>
-
       <footer class="footer">
-        <p class="footer__author">© 2025 Around The U.S.</p>
+        <p class="footer__copyright">&#x00a9; 2025 Around The USA</p>
       </footer>
     </div>
-
-    <div class="popup">
-      <div class="popup__container">
-        <button class="popup__button_close">×</button>
-
-        <h2 class="popup__title">Editar perfil</h2>
-        <form class="form">
-          <input
-            type="text"
-            placeholder="Name"
-            class="form__input"
-            id="dato1"
-          />
-          <input
-            type="text"
-            placeholder="About me"
-            class="form__input"
-            id="dato2"
-          />
-          <button class="popup__close" type="submit">Guardar</button>
-        </form>
-      </div>
-    </div>
-
-    <script src="./scripts/index.js"></script>
+    <script src="./script/index.js"></script>
   </body>
 </html>
