@@ -37,6 +37,8 @@
           </button>
         </div>
         <div class="main__gallery">
+
+        <!--
           <div class="main__gallery-card">
             <img
               src="./images/valle-yosemite.jpg"
@@ -141,38 +143,75 @@
               </button>
             </div>
           </div>
-        </div>
+        </div>-->
 
+        <!-- Popup -->
         <div class="popup">
           <button type="button" class="popup__button popup__button_close">
             &#x1F7A9;
           </button>
-          <form action="" class="popup__container">
-            <h2 class="popup__subtitle">Edit profile</h2>
+          <div class="popup__images">
+            <div class="popup__content-image">
+              <img class="popup__image" src="#" alt="" />
+            </div>
+            <div class="popup__paragraph-content">
+              <p class="popup__paragraph"></p>
+            </div>
+          </div>
+          <form action="#" class="popup__container">
+            <h2 class="popup__subtitle">h</h2>
             <fieldset class="popup__content">
               <input
                 type="text"
                 class="popup__input popup__input_name"
-                placeholder="Nombre"
+                required
               />
               <input
                 type="text"
                 class="popup__input popup__input_about"
-                placeholder="Acerca de mi"
+                required
               />
             </fieldset>
             <fieldset class="popup__content">
               <button type="submit" class="popup__button popup__button_save">
-                Save
+                Guardar
+              </button>
+              <button
+                type="button"
+                class="popup__button popup__button_add"
+                disabled
+              >
+                Guardar
               </button>
             </fieldset>
           </form>
         </div>
       </main>
+
+      <!-- Templates-->
+      <template id="main__template">
+        <div class="main__gallery-card">
+          <img class="main__gallery-image" />
+          <button
+            type="button"
+            class="main__button main__button_trash"
+          ></button>
+          <div class="main__gallery-content">
+            <p class="main__gallery-paragraph"></p>
+            <button
+              type="button"
+              class="main__button main__button_like"
+            ></button>
+          </div>
+        </div>
+      </template>
+
+      <!---->
       <footer class="footer">
         <p class="footer__copyright">&#x00a9; 2025 Around The USA</p>
       </footer>
     </div>
+    <!-- Do not move anything beyond this point-->
     <script src="./scripts/index.js"></script>
   </body>
 </html>
