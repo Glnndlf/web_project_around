@@ -74,8 +74,8 @@ function close() {
   form.removeAttribute("style");
 }
 
-butEdit.addEventListener("click", openEditAdd);
-butClose.addEventListener("click", close);
+buttonEdit.addEventListener("click", openEditAdd);
+buttonClose.addEventListener("click", close);
 butAdd.addEventListener("click", openEditAdd);
 
 function saveChangeEdit(e) {
