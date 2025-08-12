@@ -2,8 +2,8 @@ let buttonEdit = document.querySelector(".main__button_edit");
 let buttonClose = document.querySelector(".popup__button_close");
 let popup = document.querySelector(".popup");
 let form = document.querySelector(".popup__container");
-let inName = document.querySelector(".main__text_name");
-let inAbout = document.querySelector(".main__text_about");
+/*let inName = document.querySelector(".main__text_name");
+let inAbout = document.querySelector(".main__text_about");*/
 let inpName = document.querySelector(".popup__input_name");
 let inpAbout = document.querySelector(".popup__input_about");
 /**/
@@ -12,7 +12,14 @@ const popButSave = document.querySelector(".popup__button_save");
 const popButAdd = document.querySelector(".popup__button_add");
 const popimg = document.querySelector(".popup__images");
 const gallery = document.querySelector(".main__gallery");
-const title = document.querySelector(".popup__subtitle");
+/*const title = document.querySelector(".popup__subtitle");*/
+const formEd = document.querySelector("#formEdit");
+const formAdd = document.querySelector("#formAdd");
+const paragName = document.querySelector(".main__paragraph_name");
+const paragAbout = document.querySelector(".main__paragraph_about");
+const inpTitle = document.querySelector(".popup__input_title");
+const inpUrl = document.querySelector(".popup__input_url");
+/*inicio */
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -43,45 +50,69 @@ const initialCards = [
 function openEditAdd(e) {
   const butClass = e.target.classList;
   if (butClass.contains("main__button_edit")) {
-    inpName.value = inName.textContent;
+    popup.classList.toggle("popup_opened");
+    formAdd.classList.toggle("popup__item-hidden");
+    popimg.style.display = "none";
+    /*inpName.value = inName.textContent;
     inpAbout.value = inAbout.textContent;
     title.textContent = "Editar perfil";
     inpName.placeholder = "Nombre";
     inpAbout.placeholder = "Acerca de mi";
-    popup.classList.toggle("popup_opened");
     popButSave.style.display = "block";
     popButAdd.style.display = "none";
-    popimg.style.display = "none";
+    popimg.style.display = "none";*/
   } else if (butClass.contains("main__button_add")) {
-    inpName.value = "";
+    popup.classList.toggle("popup_opened");
+    formEd.classList.toggle("popup__item-hidden");
+    popimg.style.display = "none";
+    /*inpName.value = "";
     inpAbout.value = "";
     title.textContent = "Nuevo lugar";
     inpName.placeholder = "Título";
     inpAbout.placeholder = "Enlace a la imagen";
-    popup.classList.toggle("popup_opened");
     popButSave.style.display = "none";
     popButAdd.style.display = "block";
-    popimg.style.display = "none";
     inpName.addEventListener("input", validarCampos);
     inpAbout.addEventListener("input", validarCampos);
-    validarCampos();
+    validarCampos();*/
   }
 }
 
 function close() {
   popup.classList.toggle("popup_opened");
   popimg.removeAttribute("style");
-  form.removeAttribute("style");
+  /*form.removeAttribute("style");*/
+  formAdd.classList.remove("popup__item-hidden");
+  formEd.classList.remove("popup__item-hidden");
+  popButSave.classList.remove("popup__item-hidden");
+  popButAdd.classList.remove("popup__item-hidden");
+  resetValidation();
 }
 
 buttonEdit.addEventListener("click", openEditAdd);
 buttonClose.addEventListener("click", close);
 butAdd.addEventListener("click", openEditAdd);
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    close();
+  } else if (e.key === "Eenter") {
+    saveCard();
+    saveChangeEdit();
+  }
+});
+document.addEventListener("click", function (e) {
+  const popClass = e.target.classList;
+  if (popClass.contains("popup_opened")) {
+    close();
+  }
+});
 
 function saveChangeEdit(e) {
-  e.preventDefault();
+  /*  e.preventDefault();
   inName.textContent = inpName.value;
-  inAbout.textContent = inpAbout.value;
+  inAbout.textContent = inpAbout.value;*/
+  paragName.textContent = inpName.value;
+  paragAbout.textContent = inpAbout.value;
   close();
 }
 
@@ -143,7 +174,7 @@ function cardsAdd(titleValue, linkValue) {
     });
   gallery.prepend(cardElement);
 }
-
+/*
 function validarCampos() {
   popButAdd.disabled = !(inpName.value && inpAbout.value);
 }
@@ -182,3 +213,20 @@ function saveChange(e) {
 
 form.addEventListener("submit", saveChange);
 */
+function saveCard() {
+  cardsAdd(inpTitle.value, inpUrl.value);
+  close();
+}
+
+formAdd.addEventListener("submit", saveCard);
+
+function imagePopup(name, title) {
+  const popimag = popimg.querySelector(".popup__image");
+  const poptxt = popimg.querySelector(".popup__paragraph");
+  popimag.src = title;
+  popimag.alt = name;
+  poptxt.textContent = name;
+  popup.classList.toggle("popup_opened");
+  formAdd.classList.toggle("popup__item-hidden");
+  formEd.classList.toggle("popup__item-hidden");
+}
