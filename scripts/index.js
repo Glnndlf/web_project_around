@@ -219,7 +219,6 @@ function saveCard() {
 }
 
 formAdd.addEventListener("submit", saveCard);
-
 function imagePopup(name, title) {
   const popimag = popimg.querySelector(".popup__image");
   const poptxt = popimg.querySelector(".popup__paragraph");
