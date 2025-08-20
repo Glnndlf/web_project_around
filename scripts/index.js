@@ -64,8 +64,9 @@ function openEditAdd(e) {
   } else if (butClass.contains("main__button_add")) {
     popup.classList.toggle("popup_opened");
     formEd.classList.toggle("popup__item-hidden");
-    popimg.style.display = "none";
-    /*inpName.value = "";
+    popimg.classList.toggle("popup__item-hidden");
+    /*popimg.style.display = "none";
+    inpName.value = "";
     inpAbout.value = "";
     title.textContent = "Nuevo lugar";
     inpName.placeholder = "Título";
