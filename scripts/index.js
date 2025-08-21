@@ -1,11 +1,11 @@
 let buttonEdit = document.querySelector(".main__button_edit");
 let buttonClose = document.querySelector(".popup__button_close");
 let popup = document.querySelector(".popup");
-let form = document.querySelector(".popup__container");
-/*let inName = document.querySelector(".main__text_name");
-let inAbout = document.querySelector(".main__text_about");*/
 let inpName = document.querySelector(".popup__input_name");
 let inpAbout = document.querySelector(".popup__input_about");
+/*let inName = document.querySelector(".main__text_name");
+let form = document.querySelector(".popup__container");
+let inAbout = document.querySelector(".main__text_about");*/
 /**/
 const butAdd = document.querySelector(".main__button_add");
 const popButSave = document.querySelector(".popup__button_save");
@@ -52,8 +52,9 @@ function openEditAdd(e) {
   if (butClass.contains("main__button_edit")) {
     popup.classList.toggle("popup_opened");
     formAdd.classList.toggle("popup__item-hidden");
-    popimg.style.display = "none";
-    /*inpName.value = inName.textContent;
+    popimg.classList.toggle("popup__item-hidden");
+    /*popimg.style.display = "none";
+    inpName.value = inName.textContent;
     inpAbout.value = inAbout.textContent;
     title.textContent = "Editar perfil";
     inpName.placeholder = "Nombre";
@@ -117,7 +118,7 @@ function saveChangeEdit(e) {
   close();
 }
 
-form.addEventListener("submit", saveChangeEdit);
+formEd.addEventListener("submit", saveChangeEdit);
 
 function cardsInitials() {
   initialCards.forEach((item) => {
