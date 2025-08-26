@@ -26,6 +26,7 @@
               class="main__portrait-image"
             />
           </div>
+          <!---->
           <div class="main__content-text">
             <p class="main__text main__text_name">Jacques Custeau</p>
             <p class="main__text main__text_about">Explorer</p>
@@ -148,7 +149,7 @@
         </div>-->
 
       <!-- Popup -->
-      <div class="popup">
+      <div class="popup popup_image">
         <button type="button" class="popup__button popup__button_close">
           &#x1F7A9;
         </button>
@@ -160,6 +161,11 @@
             <p class="popup__paragraph"></p>
           </div>
         </div>
+      </div>
+      <div class="popup popup_profile">
+        <button type="button" class="popup__button popup__button_close">
+          &#x1F7A9;
+        </button>
         <form class="popup__form" id="formEdit" novalidate>
           <h2 class="popup__subtitle">Editar perfil</h2>
           <fieldset class="popup__content">
@@ -192,6 +198,11 @@
             </button>
           </fieldset>
         </form>
+      </div>
+      <div class="popup popup_add">
+        <button type="button" class="popup__button popup__button_close">
+          &#x1F7A9;
+        </button>
         <form class="popup__form" id="formAdd" novalidate>
           <h2 class="popup__subtitle">Nuevo lugar</h2>
           <fieldset class="popup__content">
@@ -274,7 +285,7 @@
             class="main__button main__button_trash"
           ></button>
           <div class="main__gallery-content">
-            <p class="main__gallery-paragraph"></p>
+            <p class="main__gallery-text"></p>
             <button
               type="button"
               class="main__button main__button_like"

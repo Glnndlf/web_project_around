@@ -1,6 +1,9 @@
 let buttonEdit = document.querySelector(".main__button_edit");
 let buttonClose = document.querySelector(".popup__button_close");
-let popup = document.querySelector(".popup");
+let popupProfile = document.querySelector(".popup_profile");
+let popupImage = document.querySelector(".popup_image");
+let popupAdd = document.querySelector(".popup_add");
+/*let popup = document.querySelector(".popup");*/
 let inpName = document.querySelector(".popup__input_name");
 let inpAbout = document.querySelector(".popup__input_about");
 /*let inName = document.querySelector(".main__text_name");
@@ -50,10 +53,11 @@ const initialCards = [
 function openEditAdd(e) {
   const butClass = e.target.classList;
   if (butClass.contains("main__button_edit")) {
-    popup.classList.toggle("popup_opened");
+    popupProfile.classList.add("popup_opened");
+    /*popup.classList.toggle("popup_opened");
     formAdd.classList.toggle("popup__item-hidden");
     popimg.classList.toggle("popup__item-hidden");
-    /*popimg.style.display = "none";
+    popimg.style.display = "none";
     inpName.value = inName.textContent;
     inpAbout.value = inAbout.textContent;
     title.textContent = "Editar perfil";
@@ -63,10 +67,11 @@ function openEditAdd(e) {
     popButAdd.style.display = "none";
     popimg.style.display = "none";*/
   } else if (butClass.contains("main__button_add")) {
-    popup.classList.toggle("popup_opened");
+    popupAdd.classList.add("popup_opened");
+    /*popup.classList.toggle("popup_opened");
     formEd.classList.toggle("popup__item-hidden");
     popimg.classList.toggle("popup__item-hidden");
-    /*popimg.style.display = "none";
+    popimg.style.display = "none";
     inpName.value = "";
     inpAbout.value = "";
     title.textContent = "Nuevo lugar";
@@ -81,18 +86,26 @@ function openEditAdd(e) {
 }
 
 function close() {
-  popup.classList.toggle("popup_opened");
+  popupProfile.classList.remove("popup_opened");
+  popupAdd.classList.remove("popup_opened");
+  popupImage.classList.remove("popup_opened");
+
+  /*popup.classList.toggle("popup_opened");
   popimg.removeAttribute("style");
-  /*form.removeAttribute("style");*/
+  form.removeAttribute("style");
   formAdd.classList.remove("popup__item-hidden");
   formEd.classList.remove("popup__item-hidden");
   popButSave.classList.remove("popup__item-hidden");
   popButAdd.classList.remove("popup__item-hidden");
-  resetValidation();
+  resetValidation();*/
 }
 
 buttonEdit.addEventListener("click", openEditAdd);
-buttonClose.addEventListener("click", close);
+buttonsClose.forEach(function (buttonClose) {
+  buttonClose.addEventListener("click", close);
+});
+/*buttonClose.addEventListener("click", close);*/
+
 butAdd.addEventListener("click", openEditAdd);
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") {
@@ -227,7 +240,8 @@ function imagePopup(name, title) {
   popimag.src = title;
   popimag.alt = name;
   poptxt.textContent = name;
-  popup.classList.toggle("popup_opened");
+  popupImage.classList.add("popup_opened");
+  /* popup.classList.toggle("popup_opened");
   formAdd.classList.toggle("popup__item-hidden");
-  formEd.classList.toggle("popup__item-hidden");
+  formEd.classList.toggle("popup__item-hidden");*/
 }
