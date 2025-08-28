@@ -1,5 +1,7 @@
 # Tripleten web_project_around
 
+<https://axelcisneros.github.io/web_project_around-9/>
+
 ## Proyecto 8: Alrededor de los EE.UU
 
 Siguiendo con la creación de proyectos, en esta ocación es la creacion de una red social para compartir momentos inolvidables.
@@ -18,7 +20,6 @@ Siguiendo con la creación de proyectos, en esta ocación es la creacion de una 
 - BRANCH
 - GRID LAYOUT
 - JAVASCRIPT
-- API's
 
 ## Funsionalidad
 
@@ -37,5 +38,3 @@ En un futuro se agregaran mas features como agregar mas fotos y darle like, junt
 
      -Guardado de datos base de datos
      -Implementación Back-end
-
-https://github.com/Glnndlf/web_project_around.git

@@ -3,153 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Around the U.S.A." />
-    <meta name="author" content="Glenn Smith" />
+    <meta name="description" content="Alrededor de los EE.UU." />
+    <meta name="author" content="Axel Cisneros" />
     <meta name="keywords" content="html, css, javascript" />
-    <title>Around the USA</title>
+    <title>Around the U S of A</title>
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
-
   <body>
     <div class="page">
-      <!-- -->
-      <header class="header">
-        <img src="./images/Vector.svg" alt="logo-page" class="header__image" />
-      </header>
-
-      <main class="main">
-        <div class="main__profile">
-          <div class="main__portrait">
-            <img
-              src="./images/JacquesC.jpg"
-              alt="profile-image"
-              class="main__portrait-image"
-            />
-          </div>
-          <!---->
-          <div class="main__content-text">
-            <p class="main__text main__text_name">Jacques Custeau</p>
-            <p class="main__text main__text_about">Explorer</p>
-            <button type="button" class="main__button main__button_edit">
-              &#x1F58C;
-            </button>
-          </div>
-          <button type="button" class="main__button main__button_add">
-            &#x1F7A3;
-          </button>
-        </div>
-        <div class="main__gallery"></div>
-      </main>
-
-      <!--
-          <div class="main__gallery-card">
-            <img
-              src="./images/valle-yosemite.jpg"
-              alt="valle-yosemite"
-              class="main__gallery-image"
-            />
-            <div class="main__gallery-content">
-              <p class="main__gallery-text">Valle de Yosemite</p>
-              <button type="button" class="main__button main__button_like">
-                <img
-                  src="./images/Vector-like.svg"
-                  alt="like"
-                  class="main__gallery-like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="main__gallery-card">
-            <img
-              src="./images/lago-louise.png"
-              alt="lago-louise"
-              class="main__gallery-image"
-            />
-            <div class="main__gallery-content">
-              <p class="main__gallery-text">Lago Louise</p>
-              <button type="button" class="main__button main__button_like">
-                <img
-                  src="./images/Vector-like.svg"
-                  alt="like"
-                  class="main__gallery-like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="main__gallery-card">
-            <img
-              src="./images/montañas-calvas.png"
-              alt="montañas-calvas"
-              class="main__gallery-image"
-            />
-            <div class="main__gallery-content">
-              <p class="main__gallery-text">Montañas Calvas</p>
-              <button type="button" class="main__button main__button_like">
-                <img
-                  src="./images/Vector-like.svg"
-                  alt="like"
-                  class="main__gallery-like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="main__gallery-card">
-            <img
-              src="./images/latemar.png"
-              alt="latemar"
-              class="main__gallery-image"
-            />
-            <div class="main__gallery-content">
-              <p class="main__gallery-text">Latemar</p>
-              <button type="button" class="main__button main__button_like">
-                <img
-                  src="./images/Vector-like.svg"
-                  alt="like"
-                  class="main__gallery-like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="main__gallery-card">
-            <img
-              src="./images/vanois-national-park.png"
-              alt="vanois-national-park"
-              class="main__gallery-image"
-            />
-            <div class="main__gallery-content">
-              <p class="main__gallery-text main__gallery-text_text_overflow">
-                Vanois National Park
-              </p>
-              <button type="button" class="main__button main__button_like">
-                <img
-                  src="./images/Vector-like.svg"
-                  alt="like"
-                  class="main__gallery-like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="main__gallery-card">
-            <img
-              src="./images/lago-braies.png"
-              alt="lago-braies"
-              class="main__gallery-image"
-            />
-            <div class="main__gallery-content">
-              <p class="main__gallery-text">Lago di Braies</p>
-              <button type="button" class="main__button main__button_like">
-                <img
-                  src="./images/Vector-like.svg"
-                  alt="like"
-                  class="main__gallery-like"
-                />
-              </button>
-            </div>
-          </div>
-        </div>-->
-
-      <!-- Popup -->
-      <div class="popup popup_image">
+      <div class="popup">
         <button type="button" class="popup__button popup__button_close">
           &#x1F7A9;
         </button>
@@ -161,13 +23,8 @@
             <p class="popup__paragraph"></p>
           </div>
         </div>
-      </div>
-      <div class="popup popup_profile">
-        <button type="button" class="popup__button popup__button_close">
-          &#x1F7A9;
-        </button>
         <form class="popup__form" id="formEdit" novalidate>
-          <h2 class="popup__subtitle">Editar perfil</h2>
+          <h2 class="popup__subtitle">Edit Profile</h2>
           <fieldset class="popup__content">
             <label class="popup__field">
               <input
@@ -194,17 +51,12 @@
               <span class="popup__input-error about-input-error"></span>
             </label>
             <button type="submit" class="popup__button popup__button_save">
-              Guardar
+              Save
             </button>
           </fieldset>
         </form>
-      </div>
-      <div class="popup popup_add">
-        <button type="button" class="popup__button popup__button_close">
-          &#x1F7A9;
-        </button>
         <form class="popup__form" id="formAdd" novalidate>
-          <h2 class="popup__subtitle">Nuevo lugar</h2>
+          <h2 class="popup__subtitle">New</h2>
           <fieldset class="popup__content">
             <label class="popup__field">
               <input
@@ -229,54 +81,36 @@
               <span class="popup__input-error url-input-error"></span>
             </label>
             <button type="submit" class="popup__button popup__button_add">
-              Guardar
+              Save
             </button>
           </fieldset>
         </form>
       </div>
-      <!--<div class="popup">
-          <button type="button" class="popup__button popup__button_close">
-            &#x1F7A9;
-          </button>
-          <div class="popup__images">
-            <div class="popup__content-image">
-              <img class="popup__image" src="#" alt="" />
-            </div>
-            <div class="popup__paragraph-content">
-              <p class="popup__paragraph"></p>
-            </div>
+      <header class="header">
+        <img src="./images/Vector.svg" alt="logo-page" class="header__image" />
+      </header>
+      <main class="main">
+        <div class="main__profile">
+          <div class="main__content-image">
+            <img
+              src="./images/JacquesC.jpg"
+              alt="profile-image"
+              class="main__profile-image"
+            />
           </div>
-          <form action="#" class="popup__container">
-            <h2 class="popup__subtitle">Edit profile</h2>
-            <fieldset class="popup__content">
-            
-              <input
-                type="text"
-                class="popup__input popup__input_name"
-                required
-              />
-              <input
-                type="text"
-                class="popup__input popup__input_about"
-                required
-              />
-            </fieldset>
-            <fieldset class="popup__content">
-
-              <button type="submit" class="popup__button popup__button_save">
-                Guardar
-              </button>
-              <button
-                type="button"
-                class="popup__button popup__button_add"
-                disabled
-                             
-              </button>
-            </fieldset>
-          </form>
-        </div>-->
-
-      <!-- Templates-->
+          <div class="main__content-paragraph">
+            <p class="main__paragraph main__paragraph_name">Jacques Custeau</p>
+            <p class="main__paragraph main__paragraph_about">Exploreur</p>
+            <button type="button" class="main__button main__button_edit">
+              &#x1F58C;
+            </button>
+          </div>
+          <button type="button" class="main__button main__button_add">
+            &#x1F7A3;
+          </button>
+        </div>
+        <div class="main__gallery"></div>
+      </main>
       <template id="main__template">
         <div class="main__gallery-card">
           <img class="main__gallery-image" />
@@ -285,7 +119,7 @@
             class="main__button main__button_trash"
           ></button>
           <div class="main__gallery-content">
-            <p class="main__gallery-text"></p>
+            <p class="main__gallery-paragraph"></p>
             <button
               type="button"
               class="main__button main__button_like"
@@ -293,14 +127,11 @@
           </div>
         </div>
       </template>
-
-      <!---->
       <footer class="footer">
-        <p class="footer__copyright">&#x00a9; 2025 Around The USA</p>
+        <p class="footer__copyright">&#x00a9; 2025 Around the U.S.A.</p>
       </footer>
     </div>
-    <!-- Do not move anything beyond this point-->
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/validate.js"></script>
+    <script src="./script/index.js"></script>
+    <script src="./script/validate.js"></script>
   </body>
 </html>

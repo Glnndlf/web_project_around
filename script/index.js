@@ -1,39 +1,30 @@
-let buttonEdit = document.querySelector(".main__button_edit");
-let buttonClose = document.querySelector(".popup__button_close");
-let popupProfile = document.querySelector(".popup_profile");
-let popupImage = document.querySelector(".popup_image");
-let popupAdd = document.querySelector(".popup_add");
-/*let popup = document.querySelector(".popup");*/
-let inpName = document.querySelector(".popup__input_name");
-let inpAbout = document.querySelector(".popup__input_about");
-/*let inName = document.querySelector(".main__text_name");
-let form = document.querySelector(".popup__container");
-let inAbout = document.querySelector(".main__text_about");*/
-/**/
+const butEdit = document.querySelector(".main__button_edit");
 const butAdd = document.querySelector(".main__button_add");
+const butClose = document.querySelector(".popup__button_close");
 const popButSave = document.querySelector(".popup__button_save");
 const popButAdd = document.querySelector(".popup__button_add");
-const popimg = document.querySelector(".popup__images");
-const gallery = document.querySelector(".main__gallery");
-/*const title = document.querySelector(".popup__subtitle");*/
+const popup = document.querySelector(".popup");
 const formEd = document.querySelector("#formEdit");
 const formAdd = document.querySelector("#formAdd");
+const popimg = document.querySelector(".popup__images");
+const gallery = document.querySelector(".main__gallery");
 const paragName = document.querySelector(".main__paragraph_name");
 const paragAbout = document.querySelector(".main__paragraph_about");
+const inpName = document.querySelector(".popup__input_name");
+const inpAbout = document.querySelector(".popup__input_about");
 const inpTitle = document.querySelector(".popup__input_title");
 const inpUrl = document.querySelector(".popup__input_url");
-/*inicio */
 const initialCards = [
   {
-    name: "Valle de Yosemite",
+    name: "Yosemite",
     link: "./images/valle-yosemite.jpg",
   },
   {
-    name: "Lago Louise",
+    name: "Lake Louise",
     link: "./images/lago-louise.png",
   },
   {
-    name: "Montañas Calvas",
+    name: "Bald Mountains",
     link: "./images/montañas-calvas.png",
   },
   {
@@ -53,59 +44,28 @@ const initialCards = [
 function openEditAdd(e) {
   const butClass = e.target.classList;
   if (butClass.contains("main__button_edit")) {
-    popupProfile.classList.add("popup_opened");
-    /*popup.classList.toggle("popup_opened");
+    popup.classList.toggle("popup_opened");
     formAdd.classList.toggle("popup__item-hidden");
     popimg.classList.toggle("popup__item-hidden");
-    popimg.style.display = "none";
-    inpName.value = inName.textContent;
-    inpAbout.value = inAbout.textContent;
-    title.textContent = "Editar perfil";
-    inpName.placeholder = "Nombre";
-    inpAbout.placeholder = "Acerca de mi";
-    popButSave.style.display = "block";
-    popButAdd.style.display = "none";
-    popimg.style.display = "none";*/
   } else if (butClass.contains("main__button_add")) {
-    popupAdd.classList.add("popup_opened");
-    /*popup.classList.toggle("popup_opened");
+    popup.classList.toggle("popup_opened");
     formEd.classList.toggle("popup__item-hidden");
     popimg.classList.toggle("popup__item-hidden");
-    popimg.style.display = "none";
-    inpName.value = "";
-    inpAbout.value = "";
-    title.textContent = "Nuevo lugar";
-    inpName.placeholder = "Título";
-    inpAbout.placeholder = "Enlace a la imagen";
-    popButSave.style.display = "none";
-    popButAdd.style.display = "block";
-    inpName.addEventListener("input", validarCampos);
-    inpAbout.addEventListener("input", validarCampos);
-    validarCampos();*/
   }
 }
 
 function close() {
-  popupProfile.classList.remove("popup_opened");
-  popupAdd.classList.remove("popup_opened");
-  popupImage.classList.remove("popup_opened");
-
-  /*popup.classList.toggle("popup_opened");
-  popimg.removeAttribute("style");
-  form.removeAttribute("style");
+  popup.classList.remove("popup_opened");
+  popimg.classList.remove("popup__item-hidden");
   formAdd.classList.remove("popup__item-hidden");
   formEd.classList.remove("popup__item-hidden");
   popButSave.classList.remove("popup__item-hidden");
   popButAdd.classList.remove("popup__item-hidden");
-  resetValidation();*/
+  resetValidation();
 }
 
-buttonEdit.addEventListener("click", openEditAdd);
-buttonsClose.forEach(function (buttonClose) {
-  buttonClose.addEventListener("click", close);
-});
-/*buttonClose.addEventListener("click", close);*/
-
+butEdit.addEventListener("click", openEditAdd);
+butClose.addEventListener("click", close);
 butAdd.addEventListener("click", openEditAdd);
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") {
@@ -122,10 +82,7 @@ document.addEventListener("click", function (e) {
   }
 });
 
-function saveChangeEdit(e) {
-  /*  e.preventDefault();
-  inName.textContent = inpName.value;
-  inAbout.textContent = inpAbout.value;*/
+function saveChangeEdit() {
   paragName.textContent = inpName.value;
   paragAbout.textContent = inpAbout.value;
   close();
@@ -189,59 +146,21 @@ function cardsAdd(titleValue, linkValue) {
     });
   gallery.prepend(cardElement);
 }
-/*
-function validarCampos() {
-  popButAdd.disabled = !(inpName.value && inpAbout.value);
-}
 
-popButAdd.addEventListener("click", function () {
-  cardsAdd(inpName.value, inpAbout.value);
-  close();
-});
-
-function imagePopup(name, title) {
-  const popimag = popimg.querySelector(".popup__image");
-  const poptxt = popimg.querySelector(".popup__paragraph");
-  popimag.src = title;
-  popimag.alt = name;
-  poptxt.textContent = name;
-  popup.classList.toggle("popup_opened");
-  form.style.display = "none";
-}
-
-/*
-function openEdit() {
-  inpName.value = inName.textContent;
-  inpAbout.value = inAbout.textContent;
-  popup.classList.toggle("popup_opened");
-}
-
-buttonEdit.addEventListener("click", openEdit);
-buttonClose.addEventListener("click", openEdit);
-
-function saveChange(e) {
-  e.preventDefault();
-  inName.textContent = inpName.value;
-  inAbout.textContent = inpAbout.value;
-  openEdit();
-}
-
-form.addEventListener("submit", saveChange);
-*/
 function saveCard() {
   cardsAdd(inpTitle.value, inpUrl.value);
   close();
 }
 
 formAdd.addEventListener("submit", saveCard);
+
 function imagePopup(name, title) {
   const popimag = popimg.querySelector(".popup__image");
   const poptxt = popimg.querySelector(".popup__paragraph");
   popimag.src = title;
   popimag.alt = name;
   poptxt.textContent = name;
-  popupImage.classList.add("popup_opened");
-  /* popup.classList.toggle("popup_opened");
+  popup.classList.toggle("popup_opened");
   formAdd.classList.toggle("popup__item-hidden");
-  formEd.classList.toggle("popup__item-hidden");*/
+  formEd.classList.toggle("popup__item-hidden");
 }

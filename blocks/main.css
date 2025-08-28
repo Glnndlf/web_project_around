@@ -12,45 +12,45 @@
   padding-bottom: 50px;
 }
 
-.main__portrait {
+.main__content-image {
   max-width: 120px;
 }
 
-.main__portrait-image {
-  border-radius: 100%;
+.main__profile-image {
   width: 100%;
+  border-radius: 100%;
 }
 
-.main__content-text {
+.main__content-paragraph {
   max-width: 450px;
   display: grid;
   grid-column: 2 / 4;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-row-gap: 10px;
   align-items: center;
+  grid-row-gap: 10px;
   line-height: normal;
 }
 
-.main__text {
+.main__paragraph {
   max-width: 415px;
 }
 
-.main__text_name {
-  margin: 0;
-  padding-top: 22px;
+.main__paragraph_name {
   grid-column: 1 / 4;
+  margin: 0;
   font-size: 42px;
   line-height: 48px;
   font-weight: 600;
+  padding-top: 22px;
 }
 
-.main__text_about {
-  margin: 0;
-  padding-bottom: 21px;
+.main__paragraph_about {
   grid-column: 1 / 5;
   grid-row: 2;
+  margin: 0;
   font-size: 18px;
+  padding-bottom: 21px;
 }
 
 .main__button {
@@ -66,10 +66,10 @@
 }
 
 .main__button_edit {
-  margin-bottom: 7px;
   width: 24px;
   height: 24px;
   align-self: end;
+  margin-bottom: 7px;
 }
 
 .main__button_add {
@@ -82,7 +82,7 @@
   max-width: 880px;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px 15px;
+  gap: 20px 17px;
 }
 
 .main__gallery-card {
@@ -109,10 +109,10 @@
   display: flex;
   justify-content: space-between;
   max-width: 250px;
-  margin: 15px auto;
+  margin: 20px auto;
 }
 
-.main__gallery-text {
+.main__gallery-paragraph {
   max-width: 230px;
   height: 25px;
   font-family: "Inter-Black", sans-serif;
@@ -123,7 +123,7 @@
   overflow: hidden;
 }
 
-.main__gallery-text_text_overflow {
+.main__gallery-paragraph_text_overflow {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
