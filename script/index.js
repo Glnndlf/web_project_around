@@ -61,7 +61,7 @@ function close() {
   formEd.classList.remove("popup__item-hidden");
   popButSave.classList.remove("popup__item-hidden");
   popButAdd.classList.remove("popup__item-hidden");
-  resetValidation();
+  /*resetValidation();*/
 }
 
 butEdit.addEventListener("click", openEditAdd);
@@ -82,7 +82,8 @@ document.addEventListener("click", function (e) {
   }
 });
 
-function saveChangeEdit() {
+function saveChangeEdit(event) {
+  event.preventDefault();
   paragName.textContent = inpName.value;
   paragAbout.textContent = inpAbout.value;
   close();
@@ -147,7 +148,8 @@ function cardsAdd(titleValue, linkValue) {
   gallery.prepend(cardElement);
 }
 
-function saveCard() {
+function saveCard(event) {
+  event.preventDefault();
   cardsAdd(inpTitle.value, inpUrl.value);
   close();
 }

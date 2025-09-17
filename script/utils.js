@@ -1,19 +1,19 @@
 import { reset } from "./FormValidator.js";
 import { add } from "./index.js";
 
-const butEdit = document.querySelector(".main__button_edit");
-const butAdd = document.querySelector(".main__button_add");
-const butClose = document.querySelector(".popup__button_close");
-const popup = document.querySelector(".popup");
-const formEd = document.querySelector(".form-edit");
-const formAdd = document.querySelector(".form-add");
-const popimg = document.querySelector(".popup__images");
-const paragName = document.querySelector(".main__paragraph_name");
-const paragAbout = document.querySelector(".main__paragraph_about");
-const inpName = document.querySelector(".popup__input_name");
-const inpAbout = document.querySelector(".popup__input_about");
-const inpTitle = document.querySelector(".popup__input_title");
-const inpUrl = document.querySelector(".popup__input_url");
+let butEdit = document.querySelector(".main__button_edit");
+let butAdd = document.querySelector(".main__button_add");
+let butClose = document.querySelector(".popup__button_close");
+let popup = document.querySelector(".popup");
+let formEd = document.querySelector(".form-edit");
+let formAdd = document.querySelector(".form-add");
+let popimg = document.querySelector(".popup__images");
+let paragName = document.querySelector(".main__paragraph_name");
+let paragAbout = document.querySelector(".main__paragraph_about");
+let inpName = document.querySelector(".popup__input_name");
+let inpAbout = document.querySelector(".popup__input_about");
+let inpTitle = document.querySelector(".popup__input_title");
+let inpUrl = document.querySelector(".popup__input_url");
 
 const openEditAdd = (e) => {
   const butClass = e.target.classList;
@@ -33,7 +33,7 @@ const close = () => {
   popimg.classList.remove("popup__item-hidden");
   formAdd.classList.remove("popup__item-hidden");
   formEd.classList.remove("popup__item-hidden");
-  reset(popup);
+  reset(popup);/*probable causa */
 };
 
 butEdit.addEventListener("click", openEditAdd);
@@ -67,13 +67,15 @@ const imagePopup = (name, title) => {
   formEd.classList.toggle("popup__item-hidden");
 };
 
-const saveChangeEdit = () => {
+const saveChangeEdit = (event) => {
+  event.preventDefault();
   paragName.textContent = inpName.value;
   paragAbout.textContent = inpAbout.value;
   close();
 };
 
-const saveCard = () => {
+const saveCard = (event) => {
+  event.preventDefault();
   add(inpTitle.value, inpUrl.value, "#main__template");
   close();
 };
